@@ -54,7 +54,7 @@
             }
         }
     }
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -78,7 +78,7 @@
                         s.push(num);
                         break;
                     case '2':
-                        if (s.empty())
+                        if (s.empty()) // apakah private??
                         {
                             Console.WriteLine("\nStack empty");
                             break;
