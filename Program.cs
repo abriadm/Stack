@@ -29,7 +29,7 @@
         public void push(int element)
         {
             node fresh;
-            fresh = new node(element, null);
+            fresh = new node(element, null); // Tanya ini !!! (kenapa null)
 
             fresh.next = top;
             top = fresh;
@@ -69,7 +69,7 @@
                 Console.WriteLine("4. Exit");
                 Console.WriteLine("\nEnter your choice: ");
                 string input = Console.ReadLine();
-                char ch = Convert.ToChar(input == "" ? "0" : input);
+                char ch = Convert.ToChar(input == "" ? "0" : input); // tanya ini !!!! (object di ToChar)
                 switch (ch)
                 {
                     case '1':
@@ -78,7 +78,20 @@
                         s.push(num);
                         break;
                     case '2':
-
+                        if (s.empty())
+                        {
+                            Console.WriteLine("\nStack empty");
+                            break;
+                        }
+                        s.pop();
+                        break;
+                    case '3':
+                        s.display();
+                        break;
+                    case '4':
+                        return;
+                    default:
+                        Console.WriteLine("\nInvalid Choice");
                         break;
                 }
             }
